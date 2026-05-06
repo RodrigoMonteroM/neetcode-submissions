@@ -1,0 +1,21 @@
+class Solution {
+    /**
+     * @param {number[]} prices
+     * @return {number}
+     */
+    maxProfit(prices) {
+        let min = Infinity;
+        let maxProfit = 0;
+
+        for(const price of prices){
+            if(price < min) min = price;
+            const profit = Math.abs(min - price);
+            if(profit > maxProfit) maxProfit = profit;
+
+        }
+
+        return maxProfit;
+
+
+    }
+}
